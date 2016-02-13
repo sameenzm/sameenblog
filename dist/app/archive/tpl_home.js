@@ -1,0 +1,6 @@
+define(function(require, exports, module){
+  exports.main = function anonymous(it
+/**/) {
+var out=' <style scoped> article { margin-top: 50px; } .article-meta span { margin-left: 16px; letter-spacing: 2px; font-size: 15px; font-weight: 600; line-height: 1em; text-shadow: 0 1px #fff; color: #999; } .article-meta { margin-bottom: 6px; } .article-title h1{ background-color: #e5e5e5; border-bottom: 1px solid #ddd; padding: 20px 30px; font-size: 2em; font-weight: 600; line-height: 1.1em; color: #444; } .article-inner pre{ font-size: 15px; font-family: Microsoft YaHei; zoom: 1; color: #666; padding: 10px 20px; line-height: 26px; height: 180px; } </style> <div class="container"> '; it.article.forEach(function(item){ out+=' <article> <div class="article-meta"> <span class="time"><i class="glyphicon glyphicon-calendar"></i> </span><span class="category"><i class="glyphicon glyphicon-tags"></i> '+(item.category)+'</span><span class="hit"><i class="glyphicon glyphicon-eye-open"></i>阅读('+(item.hits)+')</span><span class="comments"><i class="glyphicon glyphicon-comment"></i> 评论(7)</span> </div> <div class="article-title"> <h1><a href="javascript:;">'+(item.title)+'</a></h1> </div> <div class="article-inner"> <pre>'+(item.content)+'</pre> </div> </article> '; }); out+=' </div>';return out;
+};
+});

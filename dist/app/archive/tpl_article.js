@@ -1,0 +1,10 @@
+define(function(require, exports, module){
+  exports.lists = function anonymous(it
+/**/) {
+var out=' <style scoped> #article-list h3 { border-bottom: 1px solid #d3d3d3; } #article-list { margin-top: 50px; } #article-list ul li { list-style: square!important; font-size: 18px; font-family: Georgia, serif; } .date { color: rgba(0,0,0,0.5); } #article-list a:hover { color: #665544; } #article-list a:visited { color: #556677; } #article-list a:link { color: #556677; } .hit { font-size: 12px; } </style> <div class="container"> <div id="article-list"> <h3>'+(it.category)+'</h3> <ul> '; it.articleList.forEach(function(item){ out+=' <li><span class="date">'+(item.create_time)+' » </span><a href="javascript:;" data-go-route="archive/article/detail&article_id='+(item.id)+'">'+(item.title)+'</a> <span class="hit pull-right hidden-xs">| 阅读('+(item.hits)+') 留言(0)</span></li> '; }); out+=' </ul> </div> </div>';return out;
+};
+  exports.detail = function anonymous(it
+/**/) {
+var out=' <style scoped> #article { margin-top: 50px; font-family: Georgia, serif; } #article h1 { padding: 8px; border-bottom: 1px solid #d3d3d3; margin-bottom: 30px; } #article span { font-size: 16px; margin-right: 30px; } #article { margin-top: 50px; font-size: 18px; } .page { border-top: 1px solid #d3d3d3; padding: 10px; margin-top: 50px; } </style> <div class="container"> <div id="article"> '; it.article.forEach(function(item){ out+=' <h1>'+(item.title)+'</h1> <span class="date">'+(item.create_time)+'</span><span class="hit">阅读('+(item.hits)+')</span> <article> <p>'+(item.content)+'</p> </article> '; }); out+=' <div class="page"> <span class="up">上一篇：<a href="javascript:;" data-go-route="">就扥空</a></span><br/> <span class="down">下一篇：<a href="javascript:;" data-go-route="">sdfsdf</a></span> </div> </div> </div>';return out;
+};
+});

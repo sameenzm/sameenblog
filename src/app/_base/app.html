@@ -1,0 +1,119 @@
+<script export="header" type="text/template">
+    <header class="page-head">
+        <style scoped>
+            .navbar {
+                border-radius: 0;
+                margin-bottom: 0;
+            }
+            .page-header {
+                padding-bottom: 0;
+                margin: 0;
+                border-bottom: 0;
+            }
+            h1, h2 {
+                margin: 0;
+                border: 0;
+                padding: 0;
+            }
+            a {
+                text-decoration: none!important;
+            }
+            .banner {
+                position: relative;
+                height: 150px;
+                width: 100%;
+                text-align: center;
+                background-color: #21282e;
+            }
+            .logo {
+                padding: 5px 10px;
+                background-color: #e32d40;
+                font-size: 32px;
+                color: #fff;
+                border-radius: 5px;
+            }
+            .subtitle {
+                font-size: 16px;
+                color: #687e91;
+            }
+            .wrap {
+                position: relative;
+                top: 50px;
+            }
+        </style>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">{{=it.title}}</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav" id="navbar-nav">
+                        <li class="active" data-nav="home"><a href="javascript:;" data-go-route="/archive/home/init">首页 <span class="sr-only">(current)</span></a></li>
+                        <li data-nav="about"><a href="javascript:;" data-go-route="archive/about/init">关于</a></li>
+                        <li data-nav="talk"><a href="javascript:;" data-go-route="/archive/talk/init">说说</a></li>
+                        <li class="dropdown" data-nav="article">
+                            {{ it.navArr.forEach(function (item) { }}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{=item.name}} <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="navbar-topic-list">
+                                {{ item.children.forEach(function(c_item){ }}
+                                <li data-nav="cate_{{=c_item.id}}"><a href="javascript:;" data-go-route-reload="/archive/article/list&cateId={{=c_item.id}}" data-topic-id="{{=c_item.id}}">{{=c_item.name}}</a></li>
+                                {{ }); }}
+                            </ul>
+                            {{ }); }}
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="banner">
+            <div class="wrap">
+                <h1 class="logo-wrap"><a href="javascript:;" class="logo">张敏的博客</a></h1>
+                <h2 class="subtitle-wrap"><a class="subtitle" href="javascript:;">态度决定一切</a></h2>
+            </div>
+        </div>
+    </header>
+</script>
+
+<script export="body" type="text/template">
+    <main class="page-body">
+        <style scoped>
+            .page-body {
+                min-height: 500px;
+                background-color: #eee;
+            }
+        </style>
+        <div id="container"></div>
+    </main>
+</script>
+
+<script export="footer" type="text/template">
+    <footer class="page-foot">
+        <style scoped>
+            footer {
+                padding-bottom: 10px;
+                background-color: #454545;
+            }
+            .foot-line {
+                height: 1px;
+                border-top: 1px solid #e5e5e5;
+                margin-bottom: 20px;
+            }
+            .copyright {
+                text-align: center;
+                color: #fff;
+            }
+        </style>
+        <div class="foot-line"></div>
+        <div class="copyright">
+            Copyright ©2016 <a target="_blank" href="https://github.com/sameenzm/">Sameen</a>
+        </div>
+    </footer>
+</script>

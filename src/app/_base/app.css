@@ -1,0 +1,28 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","STHeitiSC-Light","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: Georgia, serif;
+}
+html,
+body,
+div,
+ul,li,
+a,
+h1, h2, h3, h4, h5, {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none!important;
+}
+a{
+    text-decoration: none;
+}
+.container {
+    padding-right: 15%;
+    padding-left: 15%;
+    margin-right: auto;
+    margin-left: auto;
+}
