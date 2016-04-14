@@ -5,7 +5,7 @@ define(function(require, exports, module){
     var app = require('_base/app');
 
     exports._init = function(){
-        console.log('article/_init', Date.now());
+        //console.log('article/_init', Date.now());
         app.setNavActive('article');
     }
     exports.list = function(){
@@ -21,13 +21,11 @@ define(function(require, exports, module){
                     articleList.push(article);
                 }
             });
-            //console.log(articleList,articleList);
             articleList = app.toDate(articleList);
             $('#container').html(tpl.lists({articleList: articleList, category: articleList[0]['category']}));
         });
 
     }
-
     exports.detail = function(){
         var tpl = require('./tpl_article');
         //var time = require('time');
@@ -39,12 +37,10 @@ define(function(require, exports, module){
             //        arr.push(v);
             //    }
             //});
-            //console.log(article);
             var articleId = route.getParams('article_id') - 0;
             arr = article.filter(function(a){
-                return a.id === articleId;
+                return a.id == articleId;
             });
-            //console.log('arr',arr);
             //var cTime = time.format('yyyy年mm月dd日',parseInt(arr.create_time));  //这种逻辑必须放在模板中完成
             $('#container').html(tpl.detail({article: arr}));
         });
